@@ -33,124 +33,173 @@
             </objects>
             <point key="canvasLocation" x="968.79999999999995" y="-37.331334332833585"/>
         </scene>
-        <!--Jobs Table View Controller-->
-        <scene sceneID="Msn-wD-uVk">
+        <!--Jobs View Controller-->
+        <scene sceneID="LNF-zI-bHt">
             <objects>
-                <tableViewController storyboardIdentifier="JobsTableVC" id="XJP-dl-VAT" customClass="JobsTableViewController" customModule="Punch_In" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x3h-wx-P5G">
+                <viewController storyboardIdentifier="JobsVC" id="r9w-a5-WpV" customClass="JobsViewController" customModule="Punch_In" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZkC-R0-PEx"/>
+                        <viewControllerLayoutGuide type="bottom" id="yvz-Jl-neC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sNg-df-Ws9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" translucent="NO" id="QJS-GB-C41">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.40784313729999999" green="0.40000000000000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="barTintColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textAttributes key="titleTextAttributes">
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </textAttributes>
-                            <items>
-                                <navigationItem title="Jobs" id="5iY-EZ-802">
-                                    <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="vnY-nX-1cU">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZXO-yG-q1H">
-                                            <rect key="frame" x="269" y="7" width="90" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <segments>
-                                                <segment title="Day"/>
-                                                <segment title="Week"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.84696626659999996" green="0.84711211919999996" blue="0.84695702790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </segmentedControl>
-                                        <color key="tintColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobsCell" rowHeight="104" id="E10-H0-Trp" customClass="JobsTableViewCell" customModule="Punch_In" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="104"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E10-H0-Trp" id="ojI-Ze-Sfd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oob-62-vY1">
-                                            <rect key="frame" x="30" y="8" width="213" height="87"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-31-Bwi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-Z5-gFX">
+                                        <rect key="frame" x="163" y="29" width="48" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="Zuf-Wj-pYT"/>
+                                            <constraint firstAttribute="height" constant="21" id="xyP-la-GrK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fIY-Zg-FjP">
+                                        <rect key="frame" x="261" y="25" width="106" height="29"/>
+                                        <color key="backgroundColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="lXu-Vt-FQF"/>
+                                            <constraint firstAttribute="width" constant="106" id="ze4-dH-NlP"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Day"/>
+                                            <segment title="Week"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-0r-OaV">
+                                        <rect key="frame" x="177" y="10" width="21" height="12.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12.5" id="Cvv-h0-046"/>
+                                            <constraint firstAttribute="width" constant="21" id="uL3-yI-dnZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fIY-Zg-FjP" secondAttribute="bottom" constant="7" id="7Ht-fi-bHz"/>
+                                    <constraint firstAttribute="trailing" secondItem="fIY-Zg-FjP" secondAttribute="trailing" constant="8" id="BYq-Da-zzs"/>
+                                    <constraint firstItem="g4Z-Z5-gFX" firstAttribute="centerX" secondItem="9q3-31-Bwi" secondAttribute="centerX" id="C7d-1K-hPH"/>
+                                    <constraint firstAttribute="bottom" secondItem="g4Z-Z5-gFX" secondAttribute="bottom" constant="10" id="icI-PV-7c9"/>
+                                    <constraint firstItem="QEI-0r-OaV" firstAttribute="centerX" secondItem="9q3-31-Bwi" secondAttribute="centerX" id="kkj-L4-d3L"/>
+                                    <constraint firstItem="QEI-0r-OaV" firstAttribute="top" secondItem="9q3-31-Bwi" secondAttribute="top" constant="10" id="suX-Mx-8WV"/>
+                                    <constraint firstAttribute="height" constant="60" id="zwC-5o-O5B"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="heX-ke-Itf">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="jobsCell" rowHeight="607" id="9qq-gr-HTg" customClass="JobsTableViewCell" customModule="Punch_In" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="607"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9qq-gr-HTg" id="VCA-90-4OB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="606"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oob-62-vY1">
+                                                    <rect key="frame" x="30" y="8" width="62" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="87" id="otB-h8-hgf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUR-xB-pkb">
+                                                    <rect key="frame" x="325" y="49" width="24" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="LBM-jG-bte"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn0-Rb-Isa">
+                                                    <rect key="frame" x="249" y="29" width="68" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="H47-eQ-Fwq"/>
+                                                        <constraint firstAttribute="width" constant="68" id="hvr-ig-gK8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhK-oL-old">
+                                                    <rect key="frame" x="51" y="468" width="272" height="55"/>
+                                                    <color key="backgroundColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="272" id="ZaO-v0-zef"/>
+                                                        <constraint firstAttribute="height" constant="55" id="q2T-f9-00j"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                                    <state key="normal" title="Clock In">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="87" id="otB-h8-hgf"/>
+                                                <constraint firstItem="QhK-oL-old" firstAttribute="centerX" secondItem="VCA-90-4OB" secondAttribute="centerX" id="5B6-we-AwH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pUR-xB-pkb" secondAttribute="trailing" constant="18" id="CXw-QC-U2k"/>
+                                                <constraint firstItem="QhK-oL-old" firstAttribute="centerY" secondItem="VCA-90-4OB" secondAttribute="centerY" constant="192.5" id="Exv-cW-kS7"/>
+                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="41" id="Hhv-QN-wgZ"/>
+                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="leading" secondItem="Wn0-Rb-Isa" secondAttribute="trailing" constant="8" id="a9L-nt-rDd"/>
+                                                <constraint firstItem="Wn0-Rb-Isa" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="21" id="qWW-vB-lVh"/>
+                                                <constraint firstItem="oob-62-vY1" firstAttribute="leading" secondItem="VCA-90-4OB" secondAttribute="leadingMargin" constant="22" id="rjf-El-i68"/>
+                                                <constraint firstItem="oob-62-vY1" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" id="u1y-Wl-hue"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTb-rp-1fT">
-                                            <rect key="frame" x="318" y="49" width="31" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="sNC-aH-cbc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbs-Pz-B8H">
-                                            <rect key="frame" x="251" y="29" width="59" height="45"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="45" id="Qj8-gy-zZc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="40"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="oob-62-vY1" firstAttribute="leading" secondItem="ojI-Ze-Sfd" secondAttribute="leadingMargin" constant="22" id="Oic-1d-Peb"/>
-                                        <constraint firstItem="oob-62-vY1" firstAttribute="top" secondItem="ojI-Ze-Sfd" secondAttribute="topMargin" id="Wns-bF-Hi3"/>
-                                        <constraint firstItem="WTb-rp-1fT" firstAttribute="leading" secondItem="Gbs-Pz-B8H" secondAttribute="trailing" constant="8" id="dYl-kx-WsF"/>
-                                        <constraint firstItem="Gbs-Pz-B8H" firstAttribute="leading" secondItem="oob-62-vY1" secondAttribute="trailing" constant="8" id="eDq-a5-lCI"/>
-                                        <constraint firstItem="WTb-rp-1fT" firstAttribute="leading" secondItem="Gbs-Pz-B8H" secondAttribute="trailing" constant="8" id="fQG-Vo-e1s"/>
-                                        <constraint firstItem="WTb-rp-1fT" firstAttribute="top" secondItem="ojI-Ze-Sfd" secondAttribute="topMargin" constant="41" id="fyP-b3-h7v"/>
-                                        <constraint firstItem="Gbs-Pz-B8H" firstAttribute="leading" secondItem="oob-62-vY1" secondAttribute="trailing" constant="8" id="ngN-Za-Gpm"/>
-                                        <constraint firstItem="Gbs-Pz-B8H" firstAttribute="top" secondItem="ojI-Ze-Sfd" secondAttribute="topMargin" constant="21" id="wjU-R0-WSE"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WTb-rp-1fT" secondAttribute="trailing" constant="18" id="zih-cy-6Er"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hoursWorkedLabel" destination="Wn0-Rb-Isa" id="sTS-M9-vQL"/>
+                                            <outlet property="jobNameLabel" destination="oob-62-vY1" id="00d-Ao-D0o"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addJobCell" id="7oM-z2-ejw">
+                                        <rect key="frame" x="0.0" y="635" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7oM-z2-ejw" id="QMa-Pb-LHR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="hoursWorkedLabel" destination="Gbs-Pz-B8H" id="l6a-sx-Q3F"/>
-                                    <outlet property="jobNameLabel" destination="oob-62-vY1" id="drg-TL-M8U"/>
+                                    <outlet property="dataSource" destination="r9w-a5-WpV" id="Wgz-LK-jeI"/>
+                                    <outlet property="delegate" destination="r9w-a5-WpV" id="rOo-ZP-D3H"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addJobCell" rowHeight="65" id="55v-z5-Q96" customClass="AddJobTableViewCell" customModule="Punch_In" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="176" width="375" height="65"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55v-z5-Q96" id="7GQ-Wt-aYJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ Add a Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-T5-OOi">
-                                            <rect key="frame" x="29" y="8" width="222" height="49"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XJP-dl-VAT" id="g4I-I7-SV5"/>
-                            <outlet property="delegate" destination="XJP-dl-VAT" id="G0Z-RS-Fjv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="aDd-CC-B6V"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9q3-31-Bwi" firstAttribute="leading" secondItem="sNg-df-Ws9" secondAttribute="leading" id="1xP-FE-3Cd"/>
+                            <constraint firstItem="yvz-Jl-neC" firstAttribute="top" secondItem="heX-ke-Itf" secondAttribute="bottom" id="7Lw-4Z-uxe"/>
+                            <constraint firstItem="heX-ke-Itf" firstAttribute="leading" secondItem="sNg-df-Ws9" secondAttribute="leading" id="9Bq-hU-dwO"/>
+                            <constraint firstAttribute="trailing" secondItem="9q3-31-Bwi" secondAttribute="trailing" id="FLK-Qt-UkV"/>
+                            <constraint firstItem="heX-ke-Itf" firstAttribute="top" secondItem="9q3-31-Bwi" secondAttribute="bottom" id="OFd-Ft-luX"/>
+                            <constraint firstItem="heX-ke-Itf" firstAttribute="top" secondItem="9q3-31-Bwi" secondAttribute="bottom" id="PQK-8U-RE4"/>
+                            <constraint firstAttribute="trailing" secondItem="heX-ke-Itf" secondAttribute="trailing" id="aiQ-Md-arq"/>
+                            <constraint firstItem="9q3-31-Bwi" firstAttribute="top" secondItem="sNg-df-Ws9" secondAttribute="top" id="gN3-LF-VwB"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="navigationBar" destination="QJS-GB-C41" id="eVj-V3-0o4"/>
+                        <outlet property="segControl" destination="fIY-Zg-FjP" id="YWF-7A-495"/>
+                        <outlet property="tableView" destination="heX-ke-Itf" id="eQk-nI-WZF"/>
+                        <outlet property="topBarView" destination="9q3-31-Bwi" id="fPw-AT-J4v"/>
+                        <outlet property="upChevronImage" destination="QEI-0r-OaV" id="OcI-yd-Jp7"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xsw-LY-z2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASf-xg-Mxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="-37.331334332833585"/>
+            <point key="canvasLocation" x="1892" y="-31.03448275862069"/>
         </scene>
         <!--Root Navigation Controller-->
         <scene sceneID="gmh-jU-eYk">

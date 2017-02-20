@@ -13,14 +13,13 @@ class Constants {
     
     // View Controllers
     struct viewControllers {
-        static let jobsTable = "JobsTableVC"
+        static let jobsTable = "JobsVC"
         static let login = "LoginVC"
     }
     
     // Navigation Controllers
     struct navControllers {
         static let root = "RootNC"
-        static let jobsTable = "JobsTableNC"
     }
     
     // Cell Identifiers
