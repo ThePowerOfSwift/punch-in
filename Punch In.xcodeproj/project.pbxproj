@@ -27,6 +27,7 @@
 		FF803F4F1E5AB53600D34ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF803F4E1E5AB53600D34ABE /* Extensions.swift */; };
 		FFA615D71E42E95A00393BCB /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA615D61E42E95A00393BCB /* Adapters.swift */; };
 		FFA615D91E42EA7D00393BCB /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA615D81E42EA7D00393BCB /* JobsTableViewCell.swift */; };
+		FFD488901E5E80030025076C /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD4888F1E5E80030025076C /* BarGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FFA615D61E42E95A00393BCB /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		FFA615D81E42EA7D00393BCB /* JobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		FFA615DC1E42EB9000393BCB /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-R.ttf"; path = "../../Downloads/ubuntu/Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		FFD4888F1E5E80030025076C /* BarGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				FFA615D81E42EA7D00393BCB /* JobsTableViewCell.swift */,
 				FF76E5C31E42F72F00840436 /* TempData.swift */,
 				FF803F4E1E5AB53600D34ABE /* Extensions.swift */,
+				FFD4888F1E5E80030025076C /* BarGraphView.swift */,
 			);
 			path = "Punch In";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				FFA615D71E42E95A00393BCB /* Adapters.swift in Sources */,
 				FF0F1EFB1E41A151003932E0 /* Constants.swift in Sources */,
 				FF0F1EFD1E41A231003932E0 /* JobsViewController.swift in Sources */,
+				FFD488901E5E80030025076C /* BarGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

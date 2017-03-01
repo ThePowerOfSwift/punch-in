@@ -44,8 +44,18 @@ class JobsViewController: UIViewController {
         if indexPath.row % 2 != 0 {
             print(indexPath.row)
             cell.backgroundColor = .secondaryColor
+            cell.barGraphView.backgroundColor = .secondaryColor
         } else {
             cell.backgroundColor = .thirdColor
+            cell.barGraphView.backgroundColor = .thirdColor
+        }
+        
+        if indexPath == openJobIndexPath {
+            //cell.barGraphView.alpha = 1
+            //cell.clockInButton.alpha = 1
+        } else {
+            //cell.barGraphView.alpha = 0
+            //cell.clockInButton.alpha = 0
         }
         
         let bgColorView = UIView()
@@ -53,7 +63,6 @@ class JobsViewController: UIViewController {
         cell.selectedBackgroundView = bgColorView
         
         return cell
-        
     }
     
     func animate(openingJob: Bool) {
@@ -63,6 +72,7 @@ class JobsViewController: UIViewController {
                 self.backToJobsButton.alpha = 1.0
                 self.segControl.alpha = 0.0
                 self.upChevronImage.alpha = 1.0
+                
             } else {
                 self.backToJobsButton.alpha = 0.0
                 self.upChevronImage.alpha = 0.0
@@ -129,7 +139,7 @@ extension JobsViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 if indexPath == openJobIndexPath {
                     height = view.frame.height - topBarView.frame.height
-                    print(height)
+                    
                 } else {
                     height = 0
                 }
@@ -166,6 +176,7 @@ extension JobsViewController: UITableViewDelegate, UITableViewDataSource {
             let bgColorView = UIView()
             bgColorView.backgroundColor = .thirdColor
             cell.selectedBackgroundView = bgColorView
+            
         default:
             break
         }

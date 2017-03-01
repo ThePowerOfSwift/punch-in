@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -72,7 +73,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-0r-OaV">
-                                        <rect key="frame" x="177" y="10" width="21" height="12.5"/>
+                                        <rect key="frame" x="177" y="10" width="21" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12.5" id="Cvv-h0-046"/>
                                             <constraint firstAttribute="width" constant="21" id="uL3-yI-dnZ"/>
@@ -104,7 +105,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oob-62-vY1">
                                                     <rect key="frame" x="30" y="8" width="62" height="87"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="87" id="otB-h8-hgf"/>
+                                                        <constraint firstAttribute="height" constant="87" id="qiE-Uy-955"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
                                                     <nil key="textColor"/>
@@ -113,7 +114,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUR-xB-pkb">
                                                     <rect key="frame" x="325" y="49" width="24" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="LBM-jG-bte"/>
+                                                        <constraint firstAttribute="height" constant="18" id="Jah-0z-FEx"/>
+                                                        <constraint firstAttribute="width" constant="24" id="pGo-F9-BdH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="25"/>
                                                     <nil key="textColor"/>
@@ -121,19 +123,14 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn0-Rb-Isa">
                                                     <rect key="frame" x="249" y="29" width="68" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="H47-eQ-Fwq"/>
-                                                        <constraint firstAttribute="width" constant="68" id="hvr-ig-gK8"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhK-oL-old">
-                                                    <rect key="frame" x="51" y="468" width="272" height="55"/>
+                                                    <rect key="frame" x="47" y="493.5" width="281" height="55"/>
                                                     <color key="backgroundColor" red="0.40797808769999999" green="0.3998473287" blue="0.40801864859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="272" id="ZaO-v0-zef"/>
                                                         <constraint firstAttribute="height" constant="55" id="q2T-f9-00j"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
@@ -146,19 +143,30 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-PO-JE3" customClass="BarGraphView" customModule="Punch_In" customModuleProvider="target">
+                                                    <rect key="frame" x="47" y="103" width="281" height="284"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="QhK-oL-old" firstAttribute="centerX" secondItem="VCA-90-4OB" secondAttribute="centerX" id="5B6-we-AwH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pUR-xB-pkb" secondAttribute="trailing" constant="18" id="CXw-QC-U2k"/>
-                                                <constraint firstItem="QhK-oL-old" firstAttribute="centerY" secondItem="VCA-90-4OB" secondAttribute="centerY" constant="192.5" id="Exv-cW-kS7"/>
-                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="41" id="Hhv-QN-wgZ"/>
-                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="leading" secondItem="Wn0-Rb-Isa" secondAttribute="trailing" constant="8" id="a9L-nt-rDd"/>
-                                                <constraint firstItem="Wn0-Rb-Isa" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="21" id="qWW-vB-lVh"/>
-                                                <constraint firstItem="oob-62-vY1" firstAttribute="leading" secondItem="VCA-90-4OB" secondAttribute="leadingMargin" constant="22" id="rjf-El-i68"/>
-                                                <constraint firstItem="oob-62-vY1" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" id="u1y-Wl-hue"/>
+                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="leading" secondItem="Wn0-Rb-Isa" secondAttribute="trailing" constant="8" id="2Ia-L7-Czb"/>
+                                                <constraint firstItem="Wn0-Rb-Isa" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="21" id="2JL-oV-9tr"/>
+                                                <constraint firstItem="JMO-PO-JE3" firstAttribute="centerY" secondItem="VCA-90-4OB" secondAttribute="centerY" constant="-58.200000000000003" id="887-PB-IZa"/>
+                                                <constraint firstItem="JMO-PO-JE3" firstAttribute="width" secondItem="VCA-90-4OB" secondAttribute="width" multiplier="3/4" id="JPq-kW-U24"/>
+                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" constant="41" id="ZNA-PQ-uJK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QhK-oL-old" secondAttribute="bottom" constant="50" id="bHn-5D-jei"/>
+                                                <constraint firstItem="pUR-xB-pkb" firstAttribute="leading" secondItem="Wn0-Rb-Isa" secondAttribute="trailing" constant="8" id="doJ-Yh-vnL"/>
+                                                <constraint firstItem="QhK-oL-old" firstAttribute="centerX" secondItem="VCA-90-4OB" secondAttribute="centerX" id="fPh-3a-wWR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pUR-xB-pkb" secondAttribute="trailing" constant="18" id="fsy-K7-MBh"/>
+                                                <constraint firstItem="oob-62-vY1" firstAttribute="leading" secondItem="VCA-90-4OB" secondAttribute="leadingMargin" constant="22" id="gGZ-mj-2rI"/>
+                                                <constraint firstItem="oob-62-vY1" firstAttribute="top" secondItem="VCA-90-4OB" secondAttribute="topMargin" id="sF0-uI-r5e"/>
+                                                <constraint firstItem="QhK-oL-old" firstAttribute="width" secondItem="VCA-90-4OB" secondAttribute="width" multiplier="3/4" id="t97-4h-fMV"/>
+                                                <constraint firstItem="JMO-PO-JE3" firstAttribute="height" secondItem="VCA-90-4OB" secondAttribute="height" multiplier="1/2" constant="-19.199999999999999" id="xCU-ho-lAl"/>
+                                                <constraint firstItem="JMO-PO-JE3" firstAttribute="centerX" secondItem="VCA-90-4OB" secondAttribute="centerX" id="z0t-a8-HwO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="barGraphView" destination="JMO-PO-JE3" id="Oo3-Sw-1Zv"/>
+                                            <outlet property="clockInButton" destination="QhK-oL-old" id="aOE-iD-ELO"/>
                                             <outlet property="hoursWorkedLabel" destination="Wn0-Rb-Isa" id="sTS-M9-vQL"/>
                                             <outlet property="jobNameLabel" destination="oob-62-vY1" id="00d-Ao-D0o"/>
                                         </connections>

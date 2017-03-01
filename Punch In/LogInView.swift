@@ -37,24 +37,24 @@ class LogInView: UIView, UITextFieldDelegate {
         
         usernameLabel = UILabel()
         usernameLabel?.text = "USERNAME"
-        usernameLabel?.font = Styles().standardFont
-        usernameLabel?.textColor = Styles().signInPageColorFont
+        usernameLabel?.font = Styles.standardFont
+        usernameLabel?.textColor = Styles.signInPageColorFont
         usernameLabel?.frame = CGRect(x: 50, y: 10, width: 150, height: 20)
         
         passwordLabel = UILabel()
         passwordLabel?.text = "PASSWORD"
-        passwordLabel?.font = Styles().standardFont
-        passwordLabel?.textColor = Styles().signInPageColorFont
+        passwordLabel?.font = Styles.standardFont
+        passwordLabel?.textColor = Styles.signInPageColorFont
         passwordLabel?.frame = CGRect(x: 50, y: 115, width: 150, height: 20)
         
         usernameTextField = UITextField()
         usernameTextField?.backgroundColor = UIColor.clear
         usernameTextField?.layer.cornerRadius = 10
         usernameTextField?.layer.borderWidth = 0.5
-        usernameTextField?.layer.borderColor = Styles().signInPageColorFont.cgColor
-        usernameTextField?.tintColor = Styles().signInPageColorFont
+        usernameTextField?.layer.borderColor = Styles.signInPageColorFont.cgColor
+        usernameTextField?.tintColor = Styles.signInPageColorFont
         usernameTextField?.frame = CGRect(x: 0, y: 50, width: 230, height: 40)
-        usernameTextField?.textColor = Styles().signInPageColorFont
+        usernameTextField?.textColor = Styles.signInPageColorFont
         usernameTextField?.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
         usernameTextField?.autocapitalizationType = UITextAutocapitalizationType.none
         usernameTextField?.delegate = sender
@@ -63,10 +63,10 @@ class LogInView: UIView, UITextFieldDelegate {
         passwordTextField?.backgroundColor = UIColor.clear
         passwordTextField?.layer.cornerRadius = 10
         passwordTextField?.layer.borderWidth = 0.5
-        passwordTextField?.layer.borderColor = Styles().signInPageColorFont.cgColor
-        passwordTextField?.tintColor = Styles().signInPageColorFont
+        passwordTextField?.layer.borderColor = Styles.signInPageColorFont.cgColor
+        passwordTextField?.tintColor = Styles.signInPageColorFont
         passwordTextField?.frame = CGRect(x: 0, y: 155, width: 230, height: 40)
-        passwordTextField?.textColor = Styles().signInPageColorFont
+        passwordTextField?.textColor = Styles.signInPageColorFont
         passwordTextField?.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
         passwordTextField?.isSecureTextEntry = true
         passwordTextField?.autocapitalizationType = UITextAutocapitalizationType.none
@@ -74,13 +74,13 @@ class LogInView: UIView, UITextFieldDelegate {
         passwordTextField!.delegate = sender
         
         forgotPasswordButton = UIButton()
-        forgotPasswordButton?.setAttributedTitle(NSAttributedString(string: "FORGOT PASSWORD", attributes: [NSFontAttributeName: UIFont(name: (Styles().standardFont?.fontName)!, size: 11.0)!, NSForegroundColorAttributeName: Styles().signInPageColorFont]), for: .normal)
+        forgotPasswordButton?.setAttributedTitle(NSAttributedString(string: "FORGOT PASSWORD", attributes: [NSFontAttributeName: UIFont(name: (Styles.standardFont?.fontName)!, size: 11.0)!, NSForegroundColorAttributeName: Styles.signInPageColorFont]), for: .normal)
         forgotPasswordButton?.frame = CGRect(x: 0, y: 210, width: 100, height: 25)
         forgotPasswordButton?.sizeToFit()
         forgotPasswordButton?.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
         
         signupButton = UIButton()
-        signupButton?.setAttributedTitle(NSAttributedString(string: "SIGN UP", attributes: [NSFontAttributeName: UIFont(name: (Styles().standardFont?.fontName)!, size: 11.0)!, NSForegroundColorAttributeName: Styles().signInPageColorFont]), for: .normal)
+        signupButton?.setAttributedTitle(NSAttributedString(string: "SIGN UP", attributes: [NSFontAttributeName: UIFont(name: (Styles.standardFont?.fontName)!, size: 11.0)!, NSForegroundColorAttributeName: Styles.signInPageColorFont]), for: .normal)
         signupButton?.frame = CGRect(x: 150, y: 210, width: 100, height: 25)
         signupButton?.sizeToFit()
         signupButton?.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)

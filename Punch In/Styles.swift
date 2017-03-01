@@ -11,9 +11,9 @@ import UIKit
 
 class Styles {
     
-    var signInPageColorFont: UIColor = UIColor.white
+    static var signInPageColorFont: UIColor = UIColor.white
     
-    var standardFont = UIFont(name: "Ubuntu", size: 20)
+    static var standardFont = UIFont(name: "Ubuntu", size: 20)
         
     let loginBackgroundVideoURL = Bundle.main.url(forResource: "snow", withExtension: "mp4")
     

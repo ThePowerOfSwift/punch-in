@@ -12,16 +12,7 @@ class JobsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var jobNameLabel: UILabel!
     @IBOutlet weak var hoursWorkedLabel: UILabel!
+    @IBOutlet weak var barGraphView: BarGraphView!
+    @IBOutlet weak var clockInButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
