@@ -18,5 +18,20 @@ extension UIView {
             layer.cornerRadius = newValue
         }
     }
+}
+
+extension UIViewController {
+    
+    // Manage Keyboard, let the user exit
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     var backgroundVideoPlayer: AVPlayer!
     var backgroundVideoPlayerLayer = AVPlayerLayer()
@@ -62,29 +62,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
-        textField.resignFirstResponder()
-        
-        if textField.returnKeyType == UIReturnKeyType.go {
-            Network.authToken = "tempValue"
-            RootNavigationController.shared.presentHome(animated: true)
-        }
-        
-        return true
-    }
-    
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-       animate()
-       keyboardOpen = true
-        
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        keyboardOpen = false   // Will only animate is keyboardOpen is false. Set to false, then animate.
-        animate()
-    }
-    
     func animate() {
 
         if !keyboardOpen {
@@ -109,14 +86,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         backgroundVideoPlayer.play()
         videoPaused = false
         
-        print(UIFont.familyNames)
-        
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         backgroundVideoPlayer.pause()
         videoPaused = true
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        
+        if textField.returnKeyType == UIReturnKeyType.go {
+            Network.authToken = "tempValue"
+            RootNavigationController.shared.presentHome(animated: true)
+        }
+        
+        return true
+    }
+    
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        animate()
+        keyboardOpen = true
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        keyboardOpen = false   // Will only animate is keyboardOpen is false. Set to false, then animate.
+        animate()
     }
     
 }

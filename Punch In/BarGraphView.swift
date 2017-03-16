@@ -126,7 +126,6 @@ class BarGraphView: UIView {
             timeView.addSubview(timeLabel)
             graphView.addSubview(timeView)
             
-            
         }
         
         return graphView

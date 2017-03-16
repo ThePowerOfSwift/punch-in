@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JobsViewController: UIViewController {
+class JobsViewController: UIViewController, UITextFieldDelegate {
     
     var data = [JobData] ()
     
@@ -42,7 +42,6 @@ class JobsViewController: UIViewController {
         cell.hoursWorkedLabel.text = "\(data[indexPath.row].timeWorked)"
         
         if indexPath.row % 2 != 0 {
-            print(indexPath.row)
             cell.backgroundColor = .secondaryColor
             cell.barGraphView.backgroundColor = .secondaryColor
         } else {
@@ -51,11 +50,9 @@ class JobsViewController: UIViewController {
         }
         
         if indexPath == openJobIndexPath {
-            //cell.barGraphView.alpha = 1
-            //cell.clockInButton.alpha = 1
+            cell.extend()
         } else {
-            //cell.barGraphView.alpha = 0
-            //cell.clockInButton.alpha = 0
+            cell.collapse()
         }
         
         let bgColorView = UIView()
@@ -63,6 +60,80 @@ class JobsViewController: UIViewController {
         cell.selectedBackgroundView = bgColorView
         
         return cell
+    }
+    
+    func getAddJobCellData(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> AddJobTableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID.addJob, for: indexPath) as! AddJobTableViewCell
+        
+        cell.backgroundColor = .mainColor
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = .thirdColor
+        cell.selectedBackgroundView = bgColorView
+        
+        for view in cell.contentView.subviews {
+            view.removeFromSuperview()
+        }
+        
+        if addJobOpen {
+            let addJobView = getAddJobView(to: cell.contentView)
+            cell.contentView.addSubview(addJobView)
+        } else {
+            cell.textLabel?.text = "+ Add Job"
+            cell.textLabel?.textColor = .white
+        }
+        
+        return cell
+        
+    }
+    
+    func getAddJobView(to contentView: UIView) -> UIView {
+        
+        let jobInfoView = UIView(frame: CGRect(x: 30, y: 100, width: contentView.frame.width - 60, height: 300))
+        
+        let nameLabel = UILabel()
+        nameLabel.textAlignment = .right
+        nameLabel.attributedText = NSAttributedString(string: "JOB NAME", attributes: [NSFontAttributeName: UIFont(name: (Styles.standardFont?.fontName)!, size: 18.0)!, NSForegroundColorAttributeName: Styles.signInPageColorFont])
+        nameLabel.frame = CGRect(x: 0, y: 0, width: (jobInfoView.frame.width - 60) / 2, height: 30)
+        
+        let hourlyRateLabel = UILabel()
+        hourlyRateLabel.textAlignment = .right
+        hourlyRateLabel.attributedText = NSAttributedString(string: "HOURLY RATE", attributes: [NSFontAttributeName: UIFont(name: (Styles.standardFont?.fontName)!, size: 18.0)!, NSForegroundColorAttributeName: Styles.signInPageColorFont])
+        hourlyRateLabel.frame = CGRect(x: 0, y: 80, width: (jobInfoView.frame.width - 60) / 2, height: 30)
+        
+        // NAME TEXT FIELD
+        let jobNameTextField = UITextField()
+        jobNameTextField.backgroundColor = UIColor.clear
+        jobNameTextField.layer.cornerRadius = 10
+        jobNameTextField.layer.borderWidth = 0.5
+        jobNameTextField.layer.borderColor = Styles.signInPageColorFont.cgColor
+        jobNameTextField.tintColor = Styles.signInPageColorFont
+        jobNameTextField.frame = CGRect(x: jobInfoView.frame.width / 2 + 10, y: 0, width: jobInfoView.frame.width / 2 - 10, height: 30)
+        jobNameTextField.textColor = Styles.signInPageColorFont
+        jobNameTextField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
+        jobNameTextField.autocapitalizationType = UITextAutocapitalizationType.none
+        jobNameTextField.delegate = self
+        
+        // HOURLY RATE TEXT FIELD
+        let hourlyRateTextField = UITextField()
+        hourlyRateTextField.backgroundColor = UIColor.clear
+        hourlyRateTextField.layer.cornerRadius = 10
+        hourlyRateTextField.layer.borderWidth = 0.5
+        hourlyRateTextField.layer.borderColor = Styles.signInPageColorFont.cgColor
+        hourlyRateTextField.tintColor = Styles.signInPageColorFont
+        hourlyRateTextField.frame = CGRect(x: jobInfoView.frame.width / 2 + 10, y: 80, width: jobInfoView.frame.width / 2 - 10, height: 30)
+        hourlyRateTextField.textColor = Styles.signInPageColorFont
+        hourlyRateTextField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
+        hourlyRateTextField.keyboardType = .decimalPad
+        hourlyRateTextField.delegate = self
+        
+        jobInfoView.addSubview(nameLabel)
+        jobInfoView.addSubview(jobNameTextField)
+        jobInfoView.addSubview(hourlyRateLabel)
+        jobInfoView.addSubview(hourlyRateTextField)
+        
+        return jobInfoView
     }
     
     func animate(openingJob: Bool) {
@@ -91,14 +162,22 @@ class JobsViewController: UIViewController {
     
     func backToJobsButtonPressed() {
         
-        addJobOpen = false
+        if openJobIndexPath != nil {
+        let indexPath = openJobIndexPath!
         openJobIndexPath = nil
+        tableView.reloadRows(at: [indexPath], with: .fade)
+        } else if addJobOpen {
+        addJobOpen = false
+        let test = IndexPath(row: 0, section: 1)
+        tableView.reloadRows(at: [test], with: .fade)
+        }
+        
         tableView.isScrollEnabled = true
         tableView.isUserInteractionEnabled = true
         tableView.beginUpdates()
         tableView.endUpdates()
         animate(openingJob: false)
-        
+
     }
     
 }
@@ -168,14 +247,7 @@ extension JobsViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             cell = getJobCellData(tableView, cellForRowAt: indexPath)
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID.addJob, for: indexPath)
-            cell.textLabel?.text = "+ Add Job"
-            cell.textLabel?.textColor = .white
-            cell.backgroundColor = .mainColor
-            
-            let bgColorView = UIView()
-            bgColorView.backgroundColor = .thirdColor
-            cell.selectedBackgroundView = bgColorView
+            cell = getAddJobCellData(tableView, cellForRowAt: indexPath)
             
         default:
             break
@@ -196,6 +268,7 @@ extension JobsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.endUpdates()
             setBackToJobsButton()
             animate(openingJob: true)
+            tableView.reloadRows(at: [indexPath], with: .fade)
             
         } else {
             
@@ -204,8 +277,9 @@ extension JobsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.isUserInteractionEnabled = false
             tableView.beginUpdates()
             tableView.endUpdates()
+            setBackToJobsButton()
             animate(openingJob: true)
-            
+            tableView.reloadRows(at: [indexPath], with: .fade)
         }
     }
     

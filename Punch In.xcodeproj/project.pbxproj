@@ -27,7 +27,9 @@
 		FF803F4F1E5AB53600D34ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF803F4E1E5AB53600D34ABE /* Extensions.swift */; };
 		FFA615D71E42E95A00393BCB /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA615D61E42E95A00393BCB /* Adapters.swift */; };
 		FFA615D91E42EA7D00393BCB /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA615D81E42EA7D00393BCB /* JobsTableViewCell.swift */; };
+		FFC9A36D1E73CFCF00E0D886 /* AddJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9A36C1E73CFCF00E0D886 /* AddJobTableViewCell.swift */; };
 		FFD488901E5E80030025076C /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD4888F1E5E80030025076C /* BarGraphView.swift */; };
+		FFD790BA1E7A63D500DA2385 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD790B91E7A63D500DA2385 /* Views.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +55,9 @@
 		FFA615D61E42E95A00393BCB /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		FFA615D81E42EA7D00393BCB /* JobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		FFA615DC1E42EB9000393BCB /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-R.ttf"; path = "../../Downloads/ubuntu/Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		FFC9A36C1E73CFCF00E0D886 /* AddJobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobTableViewCell.swift; sourceTree = "<group>"; };
 		FFD4888F1E5E80030025076C /* BarGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
+		FFD790B91E7A63D500DA2385 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				FF76E5C31E42F72F00840436 /* TempData.swift */,
 				FF803F4E1E5AB53600D34ABE /* Extensions.swift */,
 				FFD4888F1E5E80030025076C /* BarGraphView.swift */,
+				FFC9A36C1E73CFCF00E0D886 /* AddJobTableViewCell.swift */,
+				FFD790B91E7A63D500DA2385 /* Views.swift */,
 			);
 			path = "Punch In";
 			sourceTree = "<group>";
@@ -196,12 +202,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0F1EF91E41A091003932E0 /* PINavigationViewController.swift in Sources */,
+				FFC9A36D1E73CFCF00E0D886 /* AddJobTableViewCell.swift in Sources */,
 				FF1648BF1E306F6D00D7758D /* LogInView.swift in Sources */,
 				FF1648821E29EDC200D7758D /* LoginViewController.swift in Sources */,
 				FF0F1EFF1E41A2C7003932E0 /* RootNavigationController.swift in Sources */,
 				FF1648BD1E2F3CBD00D7758D /* SignUpView.swift in Sources */,
 				FFA615D91E42EA7D00393BCB /* JobsTableViewCell.swift in Sources */,
 				FF0F1F011E41A450003932E0 /* Network.swift in Sources */,
+				FFD790BA1E7A63D500DA2385 /* Views.swift in Sources */,
 				FF1648801E29EDC200D7758D /* AppDelegate.swift in Sources */,
 				FF76E5C41E42F72F00840436 /* TempData.swift in Sources */,
 				FF0F1EF71E41A064003932E0 /* PITableViewController.swift in Sources */,
