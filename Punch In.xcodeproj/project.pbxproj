@@ -19,9 +19,9 @@
 		FF1648871E29EDC200D7758D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1648861E29EDC200D7758D /* Assets.xcassets */; };
 		FF16488A1E29EDC200D7758D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1648881E29EDC200D7758D /* LaunchScreen.storyboard */; };
 		FF1648931E29F04D00D7758D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1648921E29F04D00D7758D /* Styles.swift */; };
-		FF16489B1E29F53200D7758D /* snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FF16489A1E29F53200D7758D /* snow.mp4 */; };
 		FF1648BD1E2F3CBD00D7758D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1648BC1E2F3CBD00D7758D /* SignUpView.swift */; };
 		FF1648BF1E306F6D00D7758D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1648BE1E306F6D00D7758D /* LogInView.swift */; };
+		FF544BD01E7E2E590066E498 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF544BCF1E7E2E590066E498 /* GoogleService-Info.plist */; };
 		FF76E5C11E42EDD800840436 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA615DC1E42EB9000393BCB /* Ubuntu-R.ttf */; };
 		FF76E5C41E42F72F00840436 /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76E5C31E42F72F00840436 /* TempData.swift */; };
 		FF803F4F1E5AB53600D34ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF803F4E1E5AB53600D34ABE /* Extensions.swift */; };
@@ -47,9 +47,10 @@
 		FF1648891E29EDC200D7758D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF16488B1E29EDC200D7758D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1648921E29F04D00D7758D /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		FF16489A1E29F53200D7758D /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = snow.mp4; path = ../../Downloads/snow.mp4; sourceTree = "<group>"; };
 		FF1648BC1E2F3CBD00D7758D /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		FF1648BE1E306F6D00D7758D /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		FF544BCF1E7E2E590066E498 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF544BD41E7E2F6F0066E498 /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = snow.mp4; path = "Punch In/Assets.xcassets/snow.dataset/snow.mp4"; sourceTree = "<group>"; };
 		FF76E5C31E42F72F00840436 /* TempData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
 		FF803F4E1E5AB53600D34ABE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FFA615D61E42E95A00393BCB /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
@@ -74,9 +75,12 @@
 		FF1648731E29EDC200D7758D = {
 			isa = PBXGroup;
 			children = (
+				FF544BD41E7E2F6F0066E498 /* snow.mp4 */,
+				FF544BD11E7E2E8A0066E498 /* UI */,
 				FF1648B91E2C753900D7758D /* Assets */,
 				FF16487E1E29EDC200D7758D /* Punch In */,
 				FF16487D1E29EDC200D7758D /* Products */,
+				FF544BCF1E7E2E590066E498 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,10 +124,24 @@
 			isa = PBXGroup;
 			children = (
 				FF1648861E29EDC200D7758D /* Assets.xcassets */,
-				FFA615DC1E42EB9000393BCB /* Ubuntu-R.ttf */,
-				FF16489A1E29F53200D7758D /* snow.mp4 */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		FF544BD11E7E2E8A0066E498 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FF544BD21E7E2E960066E498 /* Font */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		FF544BD21E7E2E960066E498 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FFA615DC1E42EB9000393BCB /* Ubuntu-R.ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,10 +205,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF76E5C11E42EDD800840436 /* Ubuntu-R.ttf in Resources */,
-				FF16489B1E29F53200D7758D /* snow.mp4 in Resources */,
 				FF16488A1E29EDC200D7758D /* LaunchScreen.storyboard in Resources */,
 				FF1648871E29EDC200D7758D /* Assets.xcassets in Resources */,
 				FF1648851E29EDC200D7758D /* Main.storyboard in Resources */,
+				FF544BD01E7E2E590066E498 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

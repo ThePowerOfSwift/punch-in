@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>994202718205-tfrvi8pm51mf7bpevv1btffgilrmrg5l.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.994202718205-tfrvi8pm51mf7bpevv1btffgilrmrg5l</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDo6Bareld8vp-H8wK7dpMk3CnJ26c8lA0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>994202718205</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kylestewart.Punch-In</string>
+	<key>PROJECT_ID</key>
+	<string>punch-in-27019</string>
+	<key>STORAGE_BUCKET</key>
+	<string>punch-in-27019.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:994202718205:ios:dd6c4e026bf6c878</string>
+	<key>DATABASE_URL</key>
+	<string>https://punch-in-27019.firebaseio.com</string>
+</dict>
+</plist>

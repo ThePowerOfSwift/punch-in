@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     
     func setBackground() {
         
-        backgroundVideoPlayer = AVPlayer(url: Styles().loginBackgroundVideoURL!)
+        backgroundVideoPlayer = AVPlayer(url: Styles.loginBackgroundVideoURL!)
         backgroundVideoPlayerLayer = AVPlayerLayer(player: backgroundVideoPlayer)
         backgroundVideoPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         backgroundVideoPlayer.volume = 0
