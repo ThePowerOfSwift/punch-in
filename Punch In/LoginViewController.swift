@@ -8,20 +8,20 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     var backgroundVideoPlayer: AVPlayer!
     var backgroundVideoPlayerLayer = AVPlayerLayer()
-    var videoPaused = false
     
     var topLayer: UIView!
-    let signUpView = SignUpView()
     let logInView = LogInView()
 
     var keyboardOpen: Bool = false
     
     var login: Bool = true
+    var handle: FIRAuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +32,32 @@ class LoginViewController: UIViewController {
         logInView.drawLogInView(sender: self)
         logInView.delegate = self
         
-        signUpView.drawSignUpView(sender: self)
-        signUpView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+            
+        })
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        backgroundVideoPlayer.play()
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        FIRAuth.auth()?.removeStateDidChangeListener(handle!)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        backgroundVideoPlayer.pause()
     }
     
     func setBackground() {
@@ -69,29 +88,11 @@ class LoginViewController: UIViewController {
         }
 
     }
-    
-    // Manage Keyboard, let the user exit
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
 
     func playerItemDidReachEnd(notification: NSNotification) {
         let p: AVPlayerItem = notification.object as! AVPlayerItem
         p.seek(to: kCMTimeZero)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-        backgroundVideoPlayer.play()
-        videoPaused = false
-        
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        backgroundVideoPlayer.pause()
-        videoPaused = true
     }
     
 }
@@ -102,7 +103,7 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if textField.returnKeyType == UIReturnKeyType.go {
-            Network.authToken = "tempValue"
+            NetworkConstants.authToken = "tempValue"
             RootNavigationController.shared.presentHome(animated: true)
         }
         
@@ -125,35 +126,80 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: LogInViewDelegate {
     
-    func signUpButtonClicked() {
-        logInView.animateLogInView(sender: self)
-        signUpView.animateSignUpView(sender: self)
-        print("Sign Up Button Clicked")
-        
+    func loginWithFacebook() {
+        print("Login With Facebook")
     }
     
+    func loginWithGoogle() {
+        print("Login With Google")
+    }
+    
+    func loginWithEmail(for email: String, with password: String) {
+        print("Login with Email")
+    }
+    
+    func signupWithFacebook() {
+        print("Sign up with Facebook")
+    }
+    
+    func signupWithGoogle() {
+        print("Sign up with Google")
+    }
+    
+    func signupWithEmail(for email: String, with password: String) {
+        print("Create User Request")
+        print("Email: " + email)
+        print("Password: " + password)
+        
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let user = user {
+                let uid = user.uid
+                let email = user.email
+                let photoURL = user.photoURL
+                
+                user.getTokenWithCompletion({ (token, error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    
+                    print("USER SUCCESSFULLY CREATED")
+                    print("USER ID: " + uid)
+                    print("EMAIL: " + email!)
+                    print("PHOTO URL: " + String(describing: photoURL))
+                    print("TOKEN: " + token!)
+                    
+                })
+            }
+            
+        })
+        
+    }
+
+    }
+
     func forgotPasswordButtonClicked() {
-        
         print("Forgot Password Button Clicked")
-        
     }
     
 }
 
-extension LoginViewController: SignUpViewDelegate {
-    
-    func backToLogInButtonClicked() {
-        logInView.animateLogInView(sender: self)
-        signUpView.animateSignUpView(sender: self)
-        print("Back to log in Clicked")
-        
-    }
-    
-    func completeSignUpButtonClicked() {
-        
-        print("Sign Up Button Clicked")
-        
-    }
-    
-}
+//extension LoginViewController: SignUpViewDelegate {
+//    
+//    func backToLogInButtonClicked() {
+//        //logInView.animateLogInView(sender: self)
+//        signUpView.animateSignUpView(sender: self)
+//        print("Back to log in Clicked")
+//        
+//    }
+//    
+//    func completeSignUpButtonClicked(for email: String, with password: String) {
+//        
+//
+//}
 

@@ -15,7 +15,7 @@ class Styles {
     
     static var standardFont = UIFont(name: "Ubuntu", size: 20)
         
-    static let loginBackgroundVideoURL = Bundle.main.url(forResource: "snow", withExtension: "mp4")
+    static let loginBackgroundVideoURL = Bundle.main.url(forResource: "loginBackgroundVideo", withExtension: "mp4")
     
 }
 
